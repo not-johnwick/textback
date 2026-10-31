@@ -12,21 +12,14 @@ normal texting app.
 - Never books a time or quotes a firm price without you
 
 ## Install
-Paste one command and answer the questions. It installs Claude Code, downloads TextBack to a `textback` folder in
-your home folder, and starts `/textback-setup`. Or copy it from
-[docs.scalewithvish.com/textback](https://docs.scalewithvish.com/textback).
+Open Claude Code (or Codex), paste this and hit send. It downloads TextBack and walks you through setup.
 
-Mac (Terminal):
-```bash
-curl -fsSL https://claude.ai/install.sh | bash && mkdir -p ~/textback && cd ~/textback && { [ -f README.md ] || curl -fsSL https://github.com/not-johnwick/textback/archive/refs/heads/main.tar.gz | tar -xzf - --strip-components 1; } && ~/.local/bin/claude "/textback-setup"
+```
+Set me up with TextBack. Download https://github.com/not-johnwick/textback into a folder called textback in my home folder. If git isn't installed, download the zip of the main branch instead. If that folder is already there, use it and don't download it again.
+Then open .claude/skills/textback-setup/SKILL.md in that folder and follow it with me, one step at a time.
 ```
 
-Windows (PowerShell):
-```powershell
-irm https://claude.ai/install.ps1 | iex; $d = "$HOME\textback"; if (!(Test-Path "$d\README.md")) { iwr https://github.com/not-johnwick/textback/archive/refs/heads/main.zip -UseBasicParsing -OutFile "$env:TEMP\textback.zip"; Expand-Archive "$env:TEMP\textback.zip" $env:TEMP -Force; Move-Item "$env:TEMP\textback-main" $d -Force }; cd $d; & "$HOME\.local\bin\claude.exe" "/textback-setup"
-```
-
-Already have Claude Code? Open this folder in it and type `/textback-setup`.
+Or copy it from [docs.scalewithvish.com/textback](https://docs.scalewithvish.com/textback).
 
 You'll need a Twilio account, an Anthropic API key and a free Cloudflare account. The setup walks you through each.
 Running cost is about $20-25 a month for a one-truck shop.

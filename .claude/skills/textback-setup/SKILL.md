@@ -25,7 +25,7 @@ Check `node --version` (needs 20 or newer). If it is missing or older, install i
   (macOS asks for their password).
 - Windows: `winget install OpenJS.NodeJS.LTS`.
 A fresh install isn't on the PATH of this window. Record the step in `setup-progress.md`, ask them to close the
-terminal, open a new one and paste the install command again: the setup resumes where it stopped.
+terminal, open a new one and paste the setup prompt again: the setup resumes where it stopped.
 On Windows, use PowerShell equivalents for the shell commands below (e.g. `[guid]::NewGuid()` twice instead of
 `openssl rand -hex 24`).
 
