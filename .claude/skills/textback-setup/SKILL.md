@@ -19,6 +19,16 @@ setup can resume: at the start, if it exists, read it and continue from the firs
 - Don't buy a number or start a paid registration without saying the price and getting a yes.
 - If a step fails, read the error, fix the cause, and say in one line what happened. Don't loop on the same command.
 
+## Step 0. Tools on this computer
+Check `node --version` (needs 20 or newer). If it is missing or older, install it for them after a yes:
+- Mac: `brew install node` if Homebrew exists; otherwise download the LTS installer from nodejs.org and open it
+  (macOS asks for their password).
+- Windows: `winget install OpenJS.NodeJS.LTS`.
+A fresh install isn't on the PATH of this window. Record the step in `setup-progress.md`, ask them to close the
+terminal, open a new one and paste the install command again: the setup resumes where it stopped.
+On Windows, use PowerShell equivalents for the shell commands below (e.g. `[guid]::NewGuid()` twice instead of
+`openssl rand -hex 24`).
+
 ## Step 1. Which number will customers text?
 Ask: "Do customers text you today on your cell, or on a business landline / office number?"
 - Cell, or no business number yet: path **A**, a new local number (about $1-2/month). Ask which area code.
