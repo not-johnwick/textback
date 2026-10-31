@@ -1,0 +1,33 @@
+{
+  "business_name": "",
+  "owner_first_name": "",
+  "owner_cell": "+1XXXXXXXXXX",
+  "business_number": "+1XXXXXXXXXX",
+  "timezone": "America/Toronto",
+  "hours": {
+    "mon": ["08:00", "18:00"],
+    "tue": ["08:00", "18:00"],
+    "wed": ["08:00", "18:00"],
+    "thu": ["08:00", "18:00"],
+    "fri": ["08:00", "18:00"],
+    "sat": ["09:00", "14:00"],
+    "sun": null
+  },
+  "grace_minutes": 3,
+  "debounce_seconds": 10,
+  "owner_takeover_hours": 2,
+  "max_ai_replies_per_hour": 4,
+  "quiet_hours": ["21:00", "08:00"],
+  "disclose_ai": true,
+  "ai_signature": "(Sam's assistant)",
+  "allowed_links": [],
+  "missed_call_text": "Hi, it's {business_name}, sorry we missed your call. {owner_first_name} is on a job. What's going on?",
+  "model": "claude-opus-5-5",
+  "effort": "low",
+  "digest_time": "07:00",
+  "weekly_report": { "day": "fri", "time": "17:00" },
+  "emergency": {
+    "gas_utility_name": "",
+    "gas_utility_number": ""
+  }
+}

@@ -1,0 +1,36 @@
+name = "textback"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Set by /textback-setup after the first deploy. Twilio signs requests against this exact URL.
+PUBLIC_URL = "https://textback.YOUR-SUBDOMAIN.workers.dev"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "textback"
+database_id = "FILL_ME" # from `npx wrangler d1 create textback`
+
+# One Thread object per customer phone number: mailbox + timer (src/thread.ts)
+[[durable_objects.bindings]]
+name = "THREAD"
+class_name = "Thread"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Thread"]
+
+# Reminders, digest, weekly report (src/jobs/tick.ts)
+[triggers]
+crons = ["* * * * *"]
+
+# v2: voice-note transcription with Workers AI Whisper
+[ai]
+binding = "AI"
+
+# Lets src/brain/prompt.ts import business/*.md as strings
+[[rules]]
+type = "Text"
+globs = ["**/*.md"]
+fallthrough = true
